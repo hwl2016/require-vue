@@ -4,10 +4,11 @@
 define(['vue', 'text!./component/bbb/tpl.html', 'aaaDataIndex'],
     function (Vue, template, aaaDataIndex) {
 
-    var bbb = new Vue({
-        el: '#app',
-        data: {
-            list: []
+    var bbb = {
+        data: function() {
+            return {
+                list: []
+            }
         },
         created: function () {
             this.getList();
@@ -24,7 +25,7 @@ define(['vue', 'text!./component/bbb/tpl.html', 'aaaDataIndex'],
                 })
             }
         }
-    });
+    };
 
     Vue.component('bbb', bbb);
 

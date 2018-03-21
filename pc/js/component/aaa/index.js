@@ -4,10 +4,11 @@
 define(['vue', 'text!./component/aaa/tpl.html', 'aaaDataIndex'],
     function (Vue, template, aaaDataIndex) {
 
-    var aaa = new Vue({
-        el: '#app',
-        data: {
-            list: []
+    var aaa = {
+        data: function() {
+            return {
+                list: []
+            }
         },
         created: function () {
             this.getList();
@@ -24,7 +25,7 @@ define(['vue', 'text!./component/aaa/tpl.html', 'aaaDataIndex'],
                 })
             }
         }
-    });
+    };
 
     Vue.component('aaa', aaa);
 
