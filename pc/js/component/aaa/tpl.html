@@ -1,0 +1,7 @@
+<div>
+    <ul>
+        <li v-for="item in list">
+            <a href="javascript:;" :data-id="item.id" @click="call(item.name)">{{item.name}}</a>
+        </li>
+    </ul>
+</div>
