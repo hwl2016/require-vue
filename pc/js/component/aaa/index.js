@@ -10,7 +10,7 @@ define(['vue', 'text!./component/aaa/tpl.html', 'aaaDataIndex'],
                 list: []
             }
         },
-        created: function () {
+        mounted: function () {
             this.getList();
         },
         template: template,
@@ -20,8 +20,9 @@ define(['vue', 'text!./component/aaa/tpl.html', 'aaaDataIndex'],
             },
             getList: function () {
                 var _this = this;
-                aaaDataIndex.getList().then(function (d) {
-                    _this.list = d;
+                aaaDataIndex.getUserList().then(function (d) {
+                    if(d.code === 200)
+                        _this.list = d.data;
                 })
             }
         }

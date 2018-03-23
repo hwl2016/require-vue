@@ -7,6 +7,7 @@ var paths = {
     'vue': 'libs/vue',
     'vuex': 'libs/vuex.min',
     'vrouter': 'libs/vue-router.min',
+    'axios': 'libs/axios.min',
     'text': 'libs/text',
 
     'index': 'component/common/index',

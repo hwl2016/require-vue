@@ -1,36 +1,26 @@
 /**
  * Created by huwl on 2018/3/21.
  */
-define(['jquery'], function ($) {
+define(['jquery', 'axios'], function ($, axios) {
     return {
         getList: function () {
+            var url = 'https://www.easy-mock.com/mock/5ab50fe0231be10258fcdebb/economic/user';
             var def = $.Deferred();
-            setTimeout(function () {
-                var d = [
-                    {
-                        id: 101,
-                        name: 'Mark',
-                        age: 18
-                    },
-                    {
-                        id: 102,
-                        name: 'Tom',
-                        age: 16
-                    },
-                    {
-                        id: 103,
-                        name: 'Smith',
-                        age: 17
-                    },
-                    {
-                        id: 104,
-                        name: 'Jack',
-                        age: 18
-                    }
-                ];
-                def.resolve(d);
-            }, 1000);
+            $.ajax({
+                url: url,
+                type: 'get'
+            }).done(function (d) {
+                return def.resolve(d);
+            });
             return def;
+        },
+
+        getUserList: function () {
+            var url = 'https://www.easy-mock.com/mock/5ab50fe0231be10258fcdebb/economic/user';
+            return axios.get(url).then(function (d) {
+                return Promise.resolve(d.data);
+            });
+
         }
     }
 })
