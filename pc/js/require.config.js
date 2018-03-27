@@ -9,6 +9,9 @@ var paths = {
     'vrouter': 'libs/vue-router.min',
     'axios': 'libs/axios.min',
     'text': 'libs/text',
+    'BScroll': 'libs/bscroll',
+
+    'Scroll': 'component/common/scroll',
 
     'index': 'component/common/index',
 
